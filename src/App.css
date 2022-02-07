@@ -15,6 +15,7 @@ html {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  min-height: 100vh;
 }
 .spinner-container {
   position: fixed;

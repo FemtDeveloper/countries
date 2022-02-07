@@ -1,8 +1,23 @@
+.input-container {
+  width: 90%;
+  display: flex;
+  border: solid 1px #c4c4c4;
+  border-radius: 5px;
+  padding: 10px;
+  height: 46px;
+  align-items: center;
+}
+
 .search {
   width: 90%;
   text-align: center;
   padding-left: 0;
+  outline: none;
+  margin-left: 5px;
+  box-shadow: none;
+  border: none;
 }
+
 .filter {
   margin: 10px;
   margin-left: 0;
@@ -27,8 +42,11 @@
   .filter {
     width: 28%;
   }
-  .search {
+  .input-container {
     width: 40%;
+  }
+  .search {
+    width: 100%;
   }
 }
 @media screen and (min-width: 769px) {

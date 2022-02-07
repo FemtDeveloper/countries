@@ -1,22 +1,23 @@
 import axios from "axios";
 import { applyMiddleware, createStore, combineReducers, compose } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
+// import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import { COUNTRIES, URL } from "./urls";
 
 const initialState = {
   allCountries: [],
-  countriesByRegion: [],
+  countryDetails: [],
   isLoading: false,
   searchCountry: "",
   filteredRegion: "",
 };
 
 const GET_COUNTRIES = "GET_COUNTRIES";
+const FETCH_COUNTRY = "FETCH_COUNTRY";
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "GET_COUNTRIES":
+    case GET_COUNTRIES:
       return {
         ...state,
         allCountries: action.payload,
@@ -42,6 +43,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         filteredRegion: action.payload,
       };
+    // case FETCH_COUNTRY:
+    //   return {
+    //     ...state,
+    //     countryDetails: action.payload,
+    //   };
     default:
       return state;
   }
@@ -68,7 +74,7 @@ export const hideLoader = () => (dispatch) => {
     type: "HIDE_LOADER",
   });
 };
-export const searchCountryFunction = (country) => (dispatch, getState) => {
+export const searchCountryFunction = (country) => (dispatch) => {
   dispatch({
     type: "SEARCH_COUNTRY",
     payload: country,
@@ -80,6 +86,14 @@ export const filterRegionFunction = (region) => (dispatch) => {
     payload: region,
   });
 };
+// export const fetchToCountryDetails = (name) => async (dispatch) => {
+//   const res = await axios.get(`https://restcountries.com/v2/name/${name}`);
+//   // console.log(res.data);
+//   dispatch({
+//     type: FETCH_COUNTRY,
+//     payload: res.data[0],
+//   });
+// };
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
