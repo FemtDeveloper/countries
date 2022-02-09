@@ -27,8 +27,6 @@ const Countries = () => {
 
   return (
     <>
-      <Link to="/">Back</Link>
-
       <Filter />
       {isLoading ? (
         <Spinner />

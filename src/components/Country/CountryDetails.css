@@ -45,6 +45,19 @@
   font-weight: 700;
   margin-top: 0px;
 }
+.back-button--container {
+  display: flex;
+  width: 100%;
+}
+.back-button {
+  color: #484848;
+  border: solid #e8e8e849 2px;
+  margin: 20px 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 30px;
+  box-shadow: 5px 5px 5px #6f6f6f49;
+}
 @media screen and (min-width: 769px) {
   .information-container {
     width: 60%;
@@ -66,8 +79,8 @@
     margin-top: 10px;
   }
   .detail-container img {
-    width: 40%;
-    height: 50%;
+    width: 50%;
+    height: 100%;
   }
   .information {
     display: flex;

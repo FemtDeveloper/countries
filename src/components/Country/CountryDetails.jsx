@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./CountryDetails.css";
+import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
 
 const CountryDetails = () => {
   const { name } = useParams();
@@ -11,7 +12,7 @@ const CountryDetails = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [currencies, setCurrencies] = useState([]);
   const [languages, setLanguages] = useState([]);
-  console.log(countryDetail);
+  // console.log(countryDetail);
   // console.log(countryDetail.currencies[0].name);
 
   useEffect(async () => {
@@ -28,6 +29,14 @@ const CountryDetails = () => {
 
   return (
     <>
+      <div className="back-button--container">
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <p className="back-button">
+            <HiOutlineArrowNarrowLeft />
+            Back
+          </p>
+        </Link>
+      </div>
       <div className="detail-container">
         <img src={imageUrl} alt="" />
         <div className="information-container">
@@ -63,7 +72,7 @@ const CountryDetails = () => {
               <p className="detail-item">
                 Languages:{" "}
                 {languages.map((lang) => (
-                  <span>{lang.name} </span>
+                  <span key={lang.name}>{lang.name} </span>
                 ))}
               </p>
             </div>
