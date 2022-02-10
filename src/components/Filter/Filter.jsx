@@ -53,19 +53,30 @@ const Filter = () => {
           />
         </div>
         <select
-          className="form-select filter"
+          className="form-select filter dark-mode"
           aria-label="Default select example"
           defaultValue=""
           onChange={handleFilter}
+          style={{ color: "grey" }}
         >
           <option defaultValue="" hidden>
             Filter by region
           </option>
-          <option value="Africa">Africa</option>
-          <option value="Americas">America</option>
-          <option value="Asia">Asia</option>
-          <option value="Europe">Europa</option>
-          <option value="Oceania">Oceania</option>
+          <option value="Africa" className="select-option">
+            Africa
+          </option>
+          <option value="Americas" className="select-option">
+            America
+          </option>
+          <option value="Asia" className="select-option">
+            Asia
+          </option>
+          <option value="Europe" className="select-option">
+            Europa
+          </option>
+          <option value="Oceania" className="select-option">
+            Oceania
+          </option>
         </select>
       </div>
     </>

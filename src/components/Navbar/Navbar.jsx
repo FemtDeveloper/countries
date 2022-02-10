@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
-import { BsMoon } from "react-icons/bs";
+import { BsMoon, BsSun } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { setDarkMode } from "../../store";
+
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const [isDark, setIsDark] = useState(false);
+  const handleDarkMode = () => {
+    setIsDark(!isDark);
+    dispatch(setDarkMode(isDark));
+  };
+
+  console.log(isDark);
   return (
     <div className="navbar-container">
       <p>Where is in the world?</p>
-      <button type="button">
-        <BsMoon /> Dark Mode
-      </button>
+      <span className="toggle-btn" onClick={handleDarkMode}>
+        {isDark ? (
+          <span>
+            <BsMoon /> Dark Mode
+          </span>
+        ) : (
+          <span>
+            <BsSun /> Light Mode
+          </span>
+        )}
+      </span>
     </div>
   );
 };

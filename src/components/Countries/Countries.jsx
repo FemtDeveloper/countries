@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Countries.css";
 import Spinner from "../Spinner/Spinner";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getCountriesAction, hideLoader, showLoader } from "../../store";
+// import { getCountriesAction, hideLoader, showLoader } from "../../store";
 import Filter from "../Filter/Filter";
 
 const Countries = () => {

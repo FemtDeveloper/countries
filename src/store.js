@@ -10,6 +10,7 @@ const initialState = {
   isLoading: false,
   searchCountry: "",
   filteredRegion: "",
+  isDarkMode: true,
 };
 
 const GET_COUNTRIES = "GET_COUNTRIES";
@@ -43,11 +44,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         filteredRegion: action.payload,
       };
-    // case FETCH_COUNTRY:
-    //   return {
-    //     ...state,
-    //     countryDetails: action.payload,
-    //   };
+    case "SET_THEME":
+      return {
+        ...state,
+        isDarkMode: action.payload,
+      };
     default:
       return state;
   }
@@ -86,14 +87,13 @@ export const filterRegionFunction = (region) => (dispatch) => {
     payload: region,
   });
 };
-// export const fetchToCountryDetails = (name) => async (dispatch) => {
-//   const res = await axios.get(`https://restcountries.com/v2/name/${name}`);
-//   // console.log(res.data);
-//   dispatch({
-//     type: FETCH_COUNTRY,
-//     payload: res.data[0],
-//   });
-// };
+export const setDarkMode = (theme) => (dispatch) => {
+  console.log(theme);
+  dispatch({
+    type: "SET_THEME",
+    payload: theme,
+  });
+};
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));

@@ -12,8 +12,6 @@ const CountryDetails = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [currencies, setCurrencies] = useState([]);
   const [languages, setLanguages] = useState([]);
-  // console.log(countryDetail);
-  // console.log(countryDetail.currencies[0].name);
 
   useEffect(async () => {
     const allCountries = async () => {

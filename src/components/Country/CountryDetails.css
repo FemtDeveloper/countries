@@ -13,7 +13,6 @@
   padding-left: 15px;
 }
 .detail-name {
-  color: #222222;
   font-weight: 700;
   margin: 20px 0;
 }
@@ -23,7 +22,6 @@
 }
 .detail-item span {
   font-weight: 400;
-  color: #484848;
 }
 .other-details {
   width: 100%;
@@ -59,9 +57,6 @@
   box-shadow: 5px 5px 5px #6f6f6f49;
 }
 @media screen and (min-width: 769px) {
-  .information-container {
-    width: 60%;
-  }
   .detail-container {
     flex-direction: row;
     align-items: flex-start;

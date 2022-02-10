@@ -2,6 +2,7 @@
   width: 95%;
   display: flex;
   border: solid 3px #e8e8e849;
+  background-color: transparent;
   border-radius: 5px;
   padding: 5px 10px;
   height: 46px;
@@ -17,12 +18,19 @@
   margin-left: 5px;
   box-shadow: none;
   border: none;
+  background-color: transparent;
 }
 
 .filter {
   margin: 10px;
   margin-left: 0;
   width: 60%;
+  background-color: transparent;
+  border: none;
+  border: solid 3px #e8e8e849;
+}
+.select-option {
+  background-color: #202c37;
 }
 .form {
   display: flex;
@@ -30,6 +38,7 @@
   align-items: flex-start;
   width: 90%;
   margin-left: 10px;
+  background-color: transparent;
 }
 @media screen and (min-width: 480px) {
   .form {
