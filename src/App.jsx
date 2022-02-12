@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 function App() {
   const isDarkMode = useSelector((state) => state.isDarkMode);
   return (
-    <Router basename="/tothepoint_login">
+    <Router>
       <div className={isDarkMode ? "dark-mode" : "App"}>
         <Navbar />
         <div className="countries">
