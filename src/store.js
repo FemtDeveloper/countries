@@ -10,7 +10,7 @@ const initialState = {
   isLoading: false,
   searchCountry: "",
   filteredRegion: "",
-  isDarkMode: true,
+  isDarkMode: false,
 };
 
 const GET_COUNTRIES = "GET_COUNTRIES";

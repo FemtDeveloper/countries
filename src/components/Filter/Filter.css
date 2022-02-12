@@ -40,6 +40,10 @@
   margin-left: 10px;
   background-color: transparent;
 }
+.form-control:focus {
+  background-color: transparent;
+  color: #cbcbcb;
+}
 @media screen and (min-width: 480px) {
   .form {
     flex-direction: row;

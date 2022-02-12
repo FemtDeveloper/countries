@@ -13,13 +13,13 @@ const Filter = () => {
   const [region, setRegion] = useState("");
   const dispatch = useDispatch();
 
-  const callcountries = async () => {
+  const callcountries = (e) => {
     dispatch(getCountriesAction());
   };
 
   useEffect(() => {
     callcountries();
-  }, []);
+  }, [searchCountry]);
 
   const handleFilter = (e) => {
     e.preventDefault();

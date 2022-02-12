@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Countries.css";
 import Spinner from "../Spinner/Spinner";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-// import { getCountriesAction, hideLoader, showLoader } from "../../store";
+import { useSelector } from "react-redux";
 import Filter from "../Filter/Filter";
 
 const Countries = () => {
-  const [countries, setCountries] = useState([]);
-
-  const dispatch = useDispatch();
   const allCountries = useSelector((store) => store.allCountries);
   const searchCountry = useSelector((store) => store.searchCountry);
   const isLoading = useSelector((store) => store.isLoading);
@@ -22,8 +18,6 @@ const Countries = () => {
     (country) => country.region.toLowerCase() == filteredRegion.toLowerCase()
   );
   const navigate = useNavigate();
-
-  console.log(filteredCountries);
 
   return (
     <>

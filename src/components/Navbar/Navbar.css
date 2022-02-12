@@ -2,6 +2,7 @@
   background-color: transparent;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-weight: 900;
   padding: 15px 10px 25px;
   margin: 15px 0 20px;

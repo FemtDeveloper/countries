@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import { BsMoon, BsSun } from "react-icons/bs";
 import { useDispatch } from "react-redux";
@@ -6,7 +6,7 @@ import { setDarkMode } from "../../store";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
   const handleDarkMode = () => {
     setIsDark(!isDark);
     dispatch(setDarkMode(isDark));
