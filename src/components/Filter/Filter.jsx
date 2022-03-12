@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import "./Filter.css";
 import {
@@ -21,14 +21,18 @@ const Filter = () => {
     callcountries();
   }, [searchCountry]);
 
+  // handle filter is a const that set the region to filter
+
   const handleFilter = (e) => {
     e.preventDefault();
     setRegion(e.target.value);
   };
 
+  // handle search is for input
+
   const handleSearch = (e) => {
-    setSearchCountry(e.target.value);
     e.preventDefault();
+    setSearchCountry(e.target.value);
   };
   useEffect(() => {
     dispatch(searchCountryFunction(searchCountry));

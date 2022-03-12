@@ -1,6 +1,5 @@
 import axios from "axios";
 import { applyMiddleware, createStore, combineReducers, compose } from "redux";
-// import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import { COUNTRIES, URL } from "./urls";
 

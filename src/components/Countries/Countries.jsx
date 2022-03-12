@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Countries.css";
 import Spinner from "../Spinner/Spinner";
 import { useNavigate } from "react-router-dom";
@@ -11,13 +11,32 @@ const Countries = () => {
   const isLoading = useSelector((store) => store.isLoading);
   const filteredRegion = useSelector((store) => store.filteredRegion);
 
+  const [countriesList, setCountriesList] = useState(allCountries);
+
   const filteredCountries = allCountries.filter((country) =>
     country.name.toLowerCase().includes(searchCountry.toLowerCase())
   );
+
   const filteredByRegion = allCountries.filter(
     (country) => country.region.toLowerCase() == filteredRegion.toLowerCase()
   );
+
+  console.log(filteredRegion);
+
+  useEffect(() => {
+    if (filteredCountries) {
+      setCountriesList(filteredCountries);
+    }
+  }, [allCountries]);
+
+  useEffect(() => {
+    if (filteredRegion) {
+      setCountriesList(filteredByRegion);
+    }
+  }, [filteredRegion]);
+
   const navigate = useNavigate();
+  console.log(allCountries);
 
   return (
     <>
@@ -25,7 +44,7 @@ const Countries = () => {
       {isLoading ? (
         <Spinner />
       ) : (
-        filteredCountries.map((country) => (
+        countriesList.map((country) => (
           <article
             className="country-container"
             key={country.name}
